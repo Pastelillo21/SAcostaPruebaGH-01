@@ -253,37 +253,31 @@ MonoBehaviour:
   - {fileID: 586436372675452208}
   - {fileID: 8354820010768508308}
   - {fileID: -3393098111368626658}
-  - {fileID: -6815723980648871263}
   - {fileID: 2791730340576861034}
   - {fileID: -6508087566776355189}
+  - {fileID: -6815723980648871263}
   - {fileID: -1508874509018339505}
   - {fileID: -2665042833146178199}
   - {fileID: -1387639154368464605}
   - {fileID: -5782294649562160077}
   - {fileID: 2980819454692486387}
   - {fileID: 3533403989588551779}
-  - {fileID: 8577422369447365966}
   - {fileID: -3854770191368943792}
   - {fileID: -6066131173630946944}
-  - {fileID: -732831362379890351}
   - {fileID: 2674159848484864415}
   - {fileID: 7812629253127020282}
   - {fileID: -5286036001436474879}
+  - {fileID: 3815359218419129601}
   - {fileID: 8317176339411706352}
   - {fileID: -4398834478187671653}
   - {fileID: -8778466836805572080}
   - {fileID: -7012162213582568368}
   - {fileID: 8983765804602629075}
+  - {fileID: -732831362379890351}
   - {fileID: 3686575837332775808}
   - {fileID: -5039823687097897935}
-  - {fileID: -7450858485143257316}
-  - {fileID: 3815359218419129601}
   m_renderMode: 1
-  m_autoColorSubmissionMode: 1
-  m_colorSubmissionModes:
-    m_List: 00000000
   m_depthSubmissionMode: 0
-  m_spacewarpMotionVectorTextureFormat: 0
   m_optimizeBufferDiscards: 0
   m_symmetricProjection: 0
 --- !u!114 &-5782294649562160077
@@ -371,7 +365,6 @@ MonoBehaviour:
   - {fileID: 166071637166017784}
   - {fileID: -3438168607081587245}
   - {fileID: -7971713882930194271}
-  - {fileID: 6691033873701497657}
   - {fileID: -2272119940275489804}
   - {fileID: -732089409479918910}
   - {fileID: 8432848635705982439}
@@ -380,13 +373,8 @@ MonoBehaviour:
   - {fileID: 883149593744917278}
   - {fileID: 7779525607378953808}
   - {fileID: 8285551648489257811}
-  - {fileID: 357606684887690663}
   m_renderMode: 1
-  m_autoColorSubmissionMode: 1
-  m_colorSubmissionModes:
-    m_List: 00000000
   m_depthSubmissionMode: 0
-  m_spacewarpMotionVectorTextureFormat: 0
   m_optimizeBufferDiscards: 0
   m_symmetricProjection: 0
 --- !u!114 &-4398834478187671653
@@ -911,13 +899,10 @@ MonoBehaviour:
     enabled: 1
   forceRemoveInternetPermission: 0
   symmetricProjection: 0
-  foveatedRenderingApi: 0
   systemSplashScreen: {fileID: 0}
   optimizeBufferDiscards: 1
   lateLatchingMode: 0
   lateLatchingDebug: 0
-  optimizeMultiviewRenderRegions: 0
-  spacewarpMotionVectorTextureFormat: 0
 --- !u!114 &3686575837332775808
 MonoBehaviour:
   m_ObjectHideFlags: 0
