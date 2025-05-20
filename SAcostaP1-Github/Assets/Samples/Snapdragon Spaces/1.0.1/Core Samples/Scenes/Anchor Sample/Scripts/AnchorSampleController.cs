@@ -70,7 +70,11 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
 
             SaveNewAnchorsToggle.onValueChanged.AddListener(_onToggleChangedAction);
             UseSurfacePlacementToggle.onValueChanged.AddListener(_onToggleChangedAction);
+#if AR_FOUNDATION_6_0_OR_NEWER
+            AnchorManager.trackablesChanged.AddListener(OnAnchorsChanged);
+#else
             AnchorManager.anchorsChanged += OnAnchorsChanged;
+#endif
             TriggerAction.action.performed += OnTriggerAction;
         }
 
@@ -84,7 +88,11 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
 
             SaveNewAnchorsToggle.onValueChanged.RemoveListener(_onToggleChangedAction);
             UseSurfacePlacementToggle.onValueChanged.RemoveListener(_onToggleChangedAction);
+#if AR_FOUNDATION_6_0_OR_NEWER
+            AnchorManager.trackablesChanged.RemoveListener(OnAnchorsChanged);
+#else
             AnchorManager.anchorsChanged -= OnAnchorsChanged;
+#endif
             TriggerAction.action.performed -= OnTriggerAction;
         }
 
@@ -215,7 +223,11 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
             InstantiateGizmos();
         }
 
+#if AR_FOUNDATION_6_0_OR_NEWER
+        private void OnAnchorsChanged(ARTrackablesChangedEventArgs<ARAnchor> args)
+#else
         private void OnAnchorsChanged(ARAnchorsChangedEventArgs args)
+#endif
         {
             foreach (var anchor in args.added)
             {
@@ -244,7 +256,11 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
 
             foreach (var anchor in args.removed)
             {
+#if AR_FOUNDATION_6_0_OR_NEWER
+                _anchorGizmos.Remove(anchor.Value.gameObject);
+#else
                 _anchorGizmos.Remove(anchor.gameObject);
+#endif
             }
         }
 

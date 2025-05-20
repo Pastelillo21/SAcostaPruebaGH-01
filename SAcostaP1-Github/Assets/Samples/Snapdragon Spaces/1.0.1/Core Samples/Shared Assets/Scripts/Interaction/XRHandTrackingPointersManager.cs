@@ -10,7 +10,13 @@ using QCHT.Interactions.Distal;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+
+#if UNITY_6000_0_OR_NEWER
+using UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals;
+#else
 using UnityEngine.XR.Interaction.Toolkit;
+#endif
+
 using UnityEngine.XR.Interaction.Toolkit.UI;
 
 namespace Qualcomm.Snapdragon.Spaces.Samples

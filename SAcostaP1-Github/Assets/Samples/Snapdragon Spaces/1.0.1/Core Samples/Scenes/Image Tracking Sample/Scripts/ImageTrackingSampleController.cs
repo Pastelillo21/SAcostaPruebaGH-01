@@ -33,7 +33,13 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
         public override void OnEnable()
         {
             base.OnEnable();
+
+#if AR_FOUNDATION_6_0_OR_NEWER
+            arImageManager.trackablesChanged.AddListener(OnTrackedImagesChanged);
+#else
             arImageManager.trackedImagesChanged += OnTrackedImagesChanged;
+#endif
+
             if (referenceImageConfigurator.HasReferenceImageTrackingMode(_referenceImageName))
             {
                 switch (referenceImageConfigurator.GetTrackingModeForReferenceImage(_referenceImageName))
@@ -61,7 +67,13 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
         public override void OnDisable()
         {
             base.OnDisable();
+
+#if AR_FOUNDATION_6_0_OR_NEWER
+            arImageManager.trackablesChanged.RemoveListener(OnTrackedImagesChanged);
+#else
             arImageManager.trackedImagesChanged -= OnTrackedImagesChanged;
+#endif
+
             foreach (var trackedImage in _trackedImages)
             {
                 referenceImageConfigurator.StopTrackingImageInstance(_referenceImageName, trackedImage.Key);
@@ -107,7 +119,11 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
             }
         }
 
+#if AR_FOUNDATION_6_0_OR_NEWER
+        private void OnTrackedImagesChanged(ARTrackablesChangedEventArgs<ARTrackedImage> args)
+#else
         private void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs args)
+#endif
         {
             foreach (var trackedImage in args.added)
             {
@@ -128,13 +144,22 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
 
             foreach (var trackedImage in args.removed)
             {
+#if AR_FOUNDATION_6_0_OR_NEWER
+                if (_trackedImages.TryGetValue(trackedImage.Key, out TrackableInfo info))
+#else
                 if (_trackedImages.TryGetValue(trackedImage.trackableId, out TrackableInfo info))
+#endif
                 {
                     info.TrackingStatusText.text = "None";
                     info.PositionTexts[0].text = "0.00";
                     info.PositionTexts[1].text = "0.00";
                     info.PositionTexts[2].text = "0.00";
+
+#if AR_FOUNDATION_6_0_OR_NEWER
+                    _trackedImages.Remove(trackedImage.Key);
+#else
                     _trackedImages.Remove(trackedImage.trackableId);
+#endif
                 }
             }
         }

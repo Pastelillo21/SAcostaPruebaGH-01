@@ -4,7 +4,11 @@
  */
 
 using UnityEngine;
+#if UNITY_6000_0_OR_NEWER
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+#else
 using UnityEngine.XR.Interaction.Toolkit;
+#endif
 
 namespace Qualcomm.Snapdragon.Spaces.Samples
 {

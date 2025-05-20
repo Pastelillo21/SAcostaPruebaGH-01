@@ -35,7 +35,7 @@ namespace Qualcomm.Snapdragon.Spaces.Samples
 #if !QCHT_UNITY_CORE
             HandTrackingButton.gameObject.SetActive(false);
 #elif QCHT_UNITY_CORE && UNITY_EDITOR
-            if (HandTrackingSimulationSettings.Instance.enabled)
+            if (XRHandTrackingSimulationSettings.Instance.enabled)
             {
                 return;
             }
