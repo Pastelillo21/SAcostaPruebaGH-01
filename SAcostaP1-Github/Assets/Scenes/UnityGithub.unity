@@ -1387,7 +1387,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_Reference: {fileID: -8061240218431744966, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SelectActionValue:
     m_UseReference: 1
     m_Action:
@@ -3118,6 +3118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1644469345}
+  - component: {fileID: 1644469346}
   m_Layer: 0
   m_Name: RightHands
   m_TagString: Untagged
@@ -3142,6 +3143,21 @@ Transform:
   - {fileID: 665032878}
   m_Father: {fileID: 809887997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1644469346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644469344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab6c93c7903b0c41bd87c9781b901e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XRRayInteractor_RightHand_Grab: {fileID: 1459580850}
+  XRRayInteractor_RightHand_Teleport: {fileID: 665032882}
+  PalancaControlDerecho: {fileID: -8061240218431744966, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1710138706
 GameObject:
   m_ObjectHideFlags: 0
